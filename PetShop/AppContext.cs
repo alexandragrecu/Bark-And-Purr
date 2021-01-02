@@ -11,10 +11,10 @@ namespace PetShop
     {
         public AppContext (DbContextOptions options) : base(options) { }
 
-        DbSet<Pet> Pets { get; set; }
-        DbSet<Product> Products { get; set; }
-        DbSet<Customer> Customers { get; set; }
-        DbSet<Sale> Sales { get; set; }
+        public virtual DbSet<Pet> Pets { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Sale> Sales { get; set; }
 
 
       //  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

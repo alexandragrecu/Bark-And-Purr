@@ -13,9 +13,9 @@ namespace PetShop.Models
         public string PetCategory { get; set; }
         [Required]
         public string Breed { get; set; }
-        public float weight { get; set; }
-        public float height { get; set; }
-        public int age { get; set; }
+        public float Weight { get; set; }
+        public float Height { get; set; }
+        public int Age { get; set; }
         public virtual Customer Customer { get; set; }
 
 

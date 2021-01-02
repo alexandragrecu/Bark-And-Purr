@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PetShop.IServices;
+using PetShop.Services;
 
 namespace PetShop
 {
@@ -32,6 +34,8 @@ namespace PetShop
 
             services.AddDbContext<AppContext>(options
               => options.UseSqlServer(Configuration.GetConnectionString("PetShopConnection")));
+
+            services.AddTransient<IPetService, PetService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
