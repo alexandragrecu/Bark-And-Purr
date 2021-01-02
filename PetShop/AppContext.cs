@@ -16,5 +16,11 @@ namespace PetShop
         DbSet<Customer> Customers { get; set; }
         DbSet<Sale> Sales { get; set; }
 
+
+      //  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+          //  optionsBuilder
+            //    .UseSqlServer(@"Data Source=(localdb)\MSSQlLocalDB;Initial Catalog=database_petshop;");
+        //}
     }
 }
