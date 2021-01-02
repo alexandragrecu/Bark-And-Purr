@@ -40,11 +40,13 @@ namespace PetShop
             services.AddTransient<IPetRepository, PetRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<ISaleRepository, SaleRepository>();
 
 
             services.AddTransient<IPetService, PetService>();
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ISaleService, SaleService>();
 
         }
 

@@ -7,7 +7,6 @@ namespace PetShop.Entities
 {
     public class Sale : BaseEntity
     {
-        public DateTime date { get; set; }
         public float total { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual ICollection<Product> Products { get; set; }
