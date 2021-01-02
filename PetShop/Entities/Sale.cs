@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PetShop.Models
+namespace PetShop.Entities
 {
-    public class Sale
+    public class Sale : BaseEntity
     {
-        public int Id { get; set; }
         public DateTime date { get; set; }
         public float total { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual ICollection<Product> Products { get; set; }
-
     }
 }

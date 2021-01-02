@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PetShop.Models
+namespace PetShop.Entities
 {
-    public class Customer
+    public class Customer : BaseEntity
     {
-        public int Id { get; set; }
-        [Required]
         public string Name { get; set; }
         public string PetBreed { get; set; }
-      
+
         public string Address { get; set; }
         public virtual ICollection<Pet> Pets { get; set; }
         public virtual ICollection<Sale> Sales { get; set; }

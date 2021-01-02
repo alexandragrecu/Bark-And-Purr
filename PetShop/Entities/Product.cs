@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PetShop.Models
+namespace PetShop.Entities
 {
-    public class Product
+    public class Product : BaseEntity
     {
-        public int Id { get; set; }
-        [Required]
         public string Name { get; set; }
-        [Required]
         public string PetType { get; set; }
         public float Cost { get; set; }
         public virtual Sale Sale { get; set; }
-        
     }
 }

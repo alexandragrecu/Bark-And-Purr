@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PetShop.Entities;
+using PetShop.IRepositories;
 using PetShop.IServices;
-using PetShop.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,55 +11,38 @@ namespace PetShop.Services
 {
     public class PetService : IPetService
     {
-        private AppContext _context;
-
-        public PetService (AppContext context)
+        private readonly IPetRepository _repository;
+        public PetService(IPetRepository repository)
         {
-            _context = context;
+            this._repository = repository;
         }
-
-        public void Add(Pet newPet)
+        public bool Add(Pet pet)
         {
-            _context.Add(newPet);
-            _context.SaveChanges();
-
+            _repository.Add(pet);
+            return _repository.SaveChanges();
         }
 
         public bool Delete(int id)
         {
-            var pet = GetById(id);
-            if (pet == null)
-            {
-                return false;
-            }
-            _context.Remove(pet);
-            if (_context.SaveChanges() > 0)
-            {
-                return true;
-            }
-            return false;
-
+            var pet = _repository.FindById(id);
+            _repository.Delete(pet);
+            return _repository.SaveChanges();
         }
 
-        public IEnumerable<Pet> GetAll()
+        public List<Pet> GetAll()
         {
-            return _context.Pets;
+            return _repository.GetAll();
         }
 
         public Pet GetById(int id)
         {
-            return GetAll()
-                .FirstOrDefault(pet => pet.Id == id);
+            return _repository.FindById(id);
         }
 
         public bool Update(Pet pet)
         {
-            _context.Update(pet);
-            if (_context.SaveChanges() > 0)
-            {
-                return true;
-            }
-            return false;
+            _repository.Update(pet);
+            return _repository.SaveChanges();
         }
     }
 }

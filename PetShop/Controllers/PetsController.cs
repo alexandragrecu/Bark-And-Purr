@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PetShop.Entities;
 using PetShop.IServices;
-using PetShop.Models;
 using PetShop.Services;
 
 namespace PetShop.Controllers

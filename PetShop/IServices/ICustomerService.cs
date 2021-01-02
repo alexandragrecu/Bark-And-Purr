@@ -1,11 +1,18 @@
-﻿using System;
+﻿using PetShop.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace PetShop.IServices
 {
-    interface ICustomerService
+    public interface ICustomerService
     {
+        List<Customer> GetAll();
+        Customer GetById(int id);
+        bool Insert(Customer Customer);
+        bool Update(Customer Customer);
+        bool Delete(int id);
+
     }
 }
