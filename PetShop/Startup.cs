@@ -38,8 +38,11 @@ namespace PetShop
               => options.UseSqlServer(Configuration.GetConnectionString("PetShopConnection")));
 
             services.AddTransient<IPetRepository, PetRepository>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+
 
             services.AddTransient<IPetService, PetService>();
+            services.AddTransient<ICustomerService, CustomerService>();
 
         }
 

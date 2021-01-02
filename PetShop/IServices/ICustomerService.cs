@@ -10,7 +10,7 @@ namespace PetShop.IServices
     {
         List<Customer> GetAll();
         Customer GetById(int id);
-        bool Insert(Customer Customer);
+        bool Add(Customer Customer);
         bool Update(Customer Customer);
         bool Delete(int id);
 
