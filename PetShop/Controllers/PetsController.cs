@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using PetShop.Entities;
 using PetShop.IServices;
 using PetShop.Services;
+using PetShop.Helpers;
 
 namespace PetShop.Controllers
 {
@@ -21,6 +22,7 @@ namespace PetShop.Controllers
         }
 
         [HttpGet("all")]
+        [Authorize]
         public IActionResult GetAll()
         {
             var response = _service.GetAll();
@@ -28,6 +30,7 @@ namespace PetShop.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public IActionResult GetPet(int id)
         {
             var response = _service.GetById(id);
@@ -35,6 +38,7 @@ namespace PetShop.Controllers
         }
 
         [HttpPatch("update")]
+        [Authorize]
         public IActionResult UpdatePet(Pet pet)
         {
             _service.Update(pet);
@@ -42,6 +46,7 @@ namespace PetShop.Controllers
         }
 
         [HttpPost("create")]
+        [Authorize]
         public IActionResult CreatePet(Pet pet)
         {
             _service.Add(pet);

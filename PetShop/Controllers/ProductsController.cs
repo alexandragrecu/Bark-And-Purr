@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetShop.Entities;
+using PetShop.Helpers;
 using PetShop.IServices;
 
 namespace PetShop.Controllers
@@ -34,6 +35,7 @@ namespace PetShop.Controllers
         }
 
         [HttpPatch("update")]
+        [Authorize]
         public IActionResult UpdateProduct(Product product)
         {
             _service.Update(product);
@@ -41,6 +43,7 @@ namespace PetShop.Controllers
         }
 
         [HttpPost("create")]
+        [Authorize]
         public IActionResult CreateProduct(Product product)
         {
             _service.Add(product);
@@ -48,6 +51,7 @@ namespace PetShop.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public IActionResult DeleteProduct(int id)
         {
             _service.Delete(id);

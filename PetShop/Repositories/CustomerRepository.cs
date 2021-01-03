@@ -12,6 +12,9 @@ namespace PetShop.Repositories
         public CustomerRepository(AppContext context) : base(context)
         {
         }
-
+        public Customer GetByEmailAndPassword(string email, string password)
+        {
+            return _table.Where(x => x.Email == email && x.Password == password).FirstOrDefault();
+        }
     }
 }

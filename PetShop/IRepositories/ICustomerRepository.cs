@@ -8,5 +8,6 @@ namespace PetShop.IRepositories
 {
     public interface ICustomerRepository : IGenericRepository<Customer>
     {
+        Customer GetByEmailAndPassword(string email, string password);
     }
 }
