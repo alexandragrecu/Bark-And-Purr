@@ -26,7 +26,7 @@ import image from "assets/img/cat.jpg";
 
 const useStyles = makeStyles(styles);
 
-export default function LoginPage(props) {
+export default function RegisterPage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   setTimeout(function () {
     setCardAnimation("");
@@ -56,38 +56,8 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="primary" className={classes.cardHeader}>
-                    <h4>Login</h4>
-                    <div className={classes.socialLine}>
-                      <Button
-                        justIcon
-                        href="#pablo"
-                        target="_blank"
-                        color="transparent"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <i className={"fab fa-twitter"} />
-                      </Button>
-                      <Button
-                        justIcon
-                        href="#pablo"
-                        target="_blank"
-                        color="transparent"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <i className={"fab fa-facebook"} />
-                      </Button>
-                      <Button
-                        justIcon
-                        href="#pablo"
-                        target="_blank"
-                        color="transparent"
-                        onClick={(e) => e.preventDefault()}
-                      >
-                        <i className={"fab fa-google-plus-g"} />
-                      </Button>
-                    </div>
+                    <h4>Register</h4>
                   </CardHeader>
-                  <p className={classes.divider}>Or Be Classical</p>
                   <CardBody>
                     <CustomInput
                       labelText="First Name..."
@@ -137,11 +107,25 @@ export default function LoginPage(props) {
                         autoComplete: "off",
                       }}
                     />
+                    <CustomInput
+                      labelText="Address..."
+                      id="first"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                    />
+                    <CustomInput
+                      labelText="Your pet breed..."
+                      id="first"
+                      formControlProps={{
+                        fullWidth: true,
+                      }}
+                    />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Link to="/home">
                       <Button simple color="primary" size="lg">
-                        Login
+                        Register
                       </Button>
                     </Link>
                   </CardFooter>

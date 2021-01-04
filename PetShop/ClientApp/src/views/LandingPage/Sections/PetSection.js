@@ -22,7 +22,7 @@ import team3 from "assets/img/faces/kendall.jpg";
 
 const useStyles = makeStyles(styles);
 
-export default function TeamSection() {
+export default function PetSection() {
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRaised,
@@ -31,7 +31,9 @@ export default function TeamSection() {
   );
   return (
     <div className={classes.section}>
-      <h2 className={classes.title}>Here is our team</h2>
+      <h2 className={classes.title}>
+        Want to adopt a pet? Choose your future little friend!
+      </h2>
       <div>
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
@@ -53,26 +55,8 @@ export default function TeamSection() {
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-twitter"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-instagram"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-facebook"} />
+                <Button color="primary" round>
+                  Adopt!
                 </Button>
               </CardFooter>
             </Card>
@@ -96,19 +80,8 @@ export default function TeamSection() {
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-twitter"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-linkedin"} />
+                <Button color="primary" round>
+                  Adopt!
                 </Button>
               </CardFooter>
             </Card>
@@ -132,26 +105,8 @@ export default function TeamSection() {
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-twitter"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-instagram"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-facebook"} />
+                <Button color="primary" round>
+                  Adopt!
                 </Button>
               </CardFooter>
             </Card>
