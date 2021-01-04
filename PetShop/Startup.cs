@@ -66,6 +66,11 @@ namespace PetShop
             }
 
             app.UseHttpsRedirection();
+            app.UseCors(x => x
+              .AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader());
+
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 

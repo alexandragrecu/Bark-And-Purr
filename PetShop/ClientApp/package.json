@@ -3,6 +3,7 @@
   "version": "1.9.0",
   "description": "Bark & Purr",
   "private": true,
+  "proxy": "https://localhost:44390/api",
   "main": "src/index.js",
   "dependencies": {
     "@material-ui/core": "4.10.0",

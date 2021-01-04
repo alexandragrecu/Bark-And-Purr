@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -27,6 +28,9 @@ const useStyles = makeStyles(styles);
 export default function LandingPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
+
+  const products = useSelector((state) => state.products);
+
   return (
     <div>
       <Header
@@ -70,7 +74,8 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
+          <ProductSection products={products} />
+
           <PetSection />
         </div>
       </div>
