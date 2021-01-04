@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { getProducts } from "./actions/products";
+import { getPets } from "./actions/pets";
 
 import "assets/scss/material-kit-react.scss?v=1.9.0";
 
@@ -15,6 +16,7 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProducts());
+    dispatch(getPets());
   }, [dispatch]);
 
   return (

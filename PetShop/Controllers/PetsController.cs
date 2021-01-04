@@ -22,7 +22,7 @@ namespace PetShop.Controllers
         }
 
         [HttpGet("all")]
-        [Authorize]
+        //[Authorize]
         public IActionResult GetAll()
         {
             var response = _service.GetAll();

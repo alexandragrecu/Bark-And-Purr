@@ -30,6 +30,9 @@ export default function LandingPage(props) {
   const { ...rest } = props;
 
   const products = useSelector((state) => state.products);
+  const pets = useSelector((state) => state.pets);
+  console.log("pets are:");
+  console.log(pets);
 
   return (
     <div>
@@ -75,8 +78,7 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection products={products} />
-
-          <PetSection />
+          <PetSection pets={pets} />
         </div>
       </div>
     </div>

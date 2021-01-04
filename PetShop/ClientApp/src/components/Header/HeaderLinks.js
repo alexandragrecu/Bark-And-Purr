@@ -26,7 +26,6 @@ export default function HeaderLinks(props) {
 
   const HeaderView = () => {
     const location = useLocation();
-    console.log(location.pathname);
     return location.pathname;
   };
 
