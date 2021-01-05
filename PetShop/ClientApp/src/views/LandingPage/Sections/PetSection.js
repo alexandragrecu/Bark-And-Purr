@@ -1,8 +1,10 @@
-import React from "react";
-import Pet from "./Pet";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
+import { getPets } from "../../../actions/pets";
+
+import Pet from "./Pet";
 // nodejs library that concatenates classes
-import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -15,21 +17,38 @@ import styles from "assets/jss/material-kit-react/views/landingPageSections/team
 
 const useStyles = makeStyles(styles);
 
-export default function PetSection(props) {
+export default function PetSection() {
   const classes = useStyles();
 
-  return (
-    <div className={classes.section}>
-      <h2 className={classes.title}>
-        Want to adopt a pet? Choose your future little friend!
-      </h2>
-      <div>
-        <GridContainer>
-          {props.pets.map((pet) => (
-            <Pet key={pet.id} pet={pet} />
-          ))}
-        </GridContainer>
+  const dispatch = useDispatch();
+  useEffect(() => {
+    // dispatch(getProducts());
+    dispatch(getPets());
+  }, [dispatch]);
+
+  const pets = useSelector((state) => state.pets);
+  const products = useSelector((state) => state.products);
+  if (pets && products) {
+    return (
+      <div className={classes.section}>
+        <h2 className={classes.title}>
+          Want to adopt a pet? Choose your future little friend!
+        </h2>
+        <div>
+          <GridContainer>
+            {pets.map((pet) => (
+              <Pet
+                key={pet.id}
+                petCategory={pet.petCategory}
+                breed={pet.breed}
+                weight={pet.weight}
+                height={pet.height}
+                age={pet.age}
+              />
+            ))}
+          </GridContainer>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }

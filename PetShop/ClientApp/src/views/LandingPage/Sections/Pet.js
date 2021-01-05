@@ -1,6 +1,5 @@
 import React from "react";
-// @material-ui/core components
-
+import PropTypes from "prop-types";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -33,16 +32,15 @@ const Pet = (props) => {
             <img src={picture1} alt="..." className={imageClasses} />
           </GridItem>
           <h4 className={classes.cardTitle}>
-            {props.pet.petCategory}
+            {props.petCategory}
             <br />
-            <small className={classes.smallTitle}>{props.pet.breed}</small>
+            <small className={classes.smallTitle}>{props.breed}</small>
           </h4>
           <CardBody>
             <p className={classes.description}>
-              weight: {props.pet.weight} {", "} height: {props.pet.height}{" "}
-              {", "}
+              weight: {props.weight} {", "} height: {props.height} {", "}
               age:
-              {props.pet.age}{" "}
+              {props.age}{" "}
             </p>
           </CardBody>
           <CardFooter className={classes.justifyCenter}>
@@ -54,6 +52,14 @@ const Pet = (props) => {
       </GridItem>
     </React.Fragment>
   );
+};
+
+Pet.propTypes = {
+  petCategory: PropTypes.string,
+  weight: PropTypes.number,
+  breed: PropTypes.string,
+  height: PropTypes.number,
+  age: PropTypes.number,
 };
 
 export default Pet;

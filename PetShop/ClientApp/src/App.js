@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
-
-import { getProducts } from "./actions/products";
-import { getPets } from "./actions/pets";
 
 import "assets/scss/material-kit-react.scss?v=1.9.0";
 
@@ -13,21 +10,15 @@ import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 
 const App = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getProducts());
-    dispatch(getPets());
-  }, [dispatch]);
-
   return (
     <React.Fragment>
       <Router>
         <Switch>
           <Route path="/home" component={LandingPage} />
-          <Route path="/login" component={LoginPage} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/profile" component={ProfilePage} />
           <Route path="/" exact component={LoginPage} />
+          <Route path="/login" component={LoginPage} />
         </Switch>
       </Router>
     </React.Fragment>

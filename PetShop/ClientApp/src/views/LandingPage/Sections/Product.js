@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 // @material-ui/core components
 
 // @material-ui/icons
@@ -13,9 +14,9 @@ const Product = (props) => {
     <React.Fragment>
       <GridItem xs={12} sm={12} md={4}>
         <InfoArea
-          title={props.product.name}
-          description={props.product.petType}
-          cost={props.product.cost}
+          title={props.name}
+          description={props.petType}
+          cost={props.cost}
           icon={VerifiedUser}
           iconColor="success"
           vertical
@@ -26,6 +27,12 @@ const Product = (props) => {
       </GridItem>
     </React.Fragment>
   );
+};
+
+Product.propTypes = {
+  name: PropTypes.string,
+  petType: PropTypes.string,
+  cost: PropTypes.number,
 };
 
 export default Product;

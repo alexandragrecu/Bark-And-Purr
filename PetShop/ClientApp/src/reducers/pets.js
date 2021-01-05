@@ -1,4 +1,4 @@
-const reducer = (pets = [], action) => {
+export default (pets = [], action) => {
   switch (action.type) {
     case "FETCH_ALL":
       return action.payload;
@@ -6,5 +6,3 @@ const reducer = (pets = [], action) => {
       return pets;
   }
 };
-
-export default reducer;
